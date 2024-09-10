@@ -53,4 +53,55 @@ public class Product {
     public int hashCode() {
         return Objects.hash(productCode);
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productCode='" + productCode + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productLine='" + productLine + '\'' +
+                ", productScale='" + productScale + '\'' +
+                ", productVendor='" + productVendor + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", quantityInStock=" + quantityInStock +
+                ", buyPrice=" + buyPrice +
+                ", MRSP=" + MRSP +
+                '}';
+    }
+
+    public String getProductCode() {
+        return productCode;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getProductLine() {
+        return productLine;
+    }
+
+    public String getProductScale() {
+        return productScale;
+    }
+
+    public String getProductVendor() {
+        return productVendor;
+    }
+
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public int getQuantityInStock() {
+        return quantityInStock;
+    }
+
+    public double getBuyPrice() {
+        return buyPrice;
+    }
+
+    public double getMRSP() {
+        return MRSP;
+    }
 }
