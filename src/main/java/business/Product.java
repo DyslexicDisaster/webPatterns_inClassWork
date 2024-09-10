@@ -1,17 +1,23 @@
 package business;
 
+import java.util.Objects;
+
 public class Product {
-    //                          productCode varchar(15) NOT NULL,
-    //                          productName varchar(70) NOT NULL,
-    //                          productLine varchar(50) NOT NULL,
-    //                          productScale varchar(10) NOT NULL,
-    //                          productVendor varchar(50) NOT NULL,
-    //                          productDescription text NOT NULL,
-    //                          quantityInStock smallint(6) NOT NULL,
-    //                          buyPrice double NOT NULL,
-    //                          MSRP double NOT NULL,
-    //                          PRIMARY KEY  (productCode),
-    //                          FOREIGN KEY (productLine) REFERENCES productlines(productLine)
+    //i. Create a new class modelling the products table (Product.java) – this is a DTO (Data Transfer Object). Like
+    //the Customer class in the example, this class should contain variables based on the table as well as
+    //constructors, getters, setters and the "good practice" methods.
+
+    //productCode varchar(15) NOT NULL,
+    //productName varchar(70) NOT NULL,
+    //productLine varchar(50) NOT NULL,
+    //productScale varchar(10) NOT NULL,
+    //productVendor varchar(50) NOT NULL,
+    //productDescription text NOT NULL,
+    //quantityInStock smallint(6) NOT NULL,
+    //buyPrice double NOT NULL,
+    //MSRP double NOT NULL,
+    //PRIMARY KEY  (productCode),
+    //FOREIGN KEY (productLine) REFERENCES productlines(productLine)
 
     private String productCode;
     private String productName;
@@ -35,4 +41,16 @@ public class Product {
         this.MRSP = MRSP;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(productCode, product.productCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productCode);
+    }
 }
