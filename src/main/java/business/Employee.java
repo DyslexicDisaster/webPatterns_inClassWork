@@ -1,4 +1,4 @@
-package Week_1.business;
+package business;
 
 public class Employee {
         /*

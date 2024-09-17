@@ -1,6 +1,6 @@
-package Week_1.app;
+package business;
 
-import Week_1.business.Product;
+import business.Product;
 
 import java.sql.*;
 import java.time.LocalDateTime;
