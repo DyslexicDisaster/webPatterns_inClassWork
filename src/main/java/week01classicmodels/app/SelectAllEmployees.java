@@ -1,6 +1,6 @@
-package business;
+package week01classicmodels.app;
 
-import business.Employee;
+import week01classicmodels.business.Employee;
 
 import java.sql.*;
 import java.time.LocalDateTime;

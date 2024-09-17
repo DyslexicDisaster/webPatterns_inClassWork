@@ -1,4 +1,4 @@
-package business;
+package week01classicmodels.business;
 
 import java.util.Objects;
 

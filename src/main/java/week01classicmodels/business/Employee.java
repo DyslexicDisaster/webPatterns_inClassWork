@@ -1,4 +1,4 @@
-package business;
+package week01classicmodels.business;
 
 public class Employee {
         /*
