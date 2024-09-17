@@ -2,7 +2,7 @@ package business;
 
 import java.util.Objects;
 
-public class Product {
+public class Product implements Comparable<Product> {
     //i. Create a new class modelling the products table (Product.java) – this is a DTO (Data Transfer Object). Like
     //the Customer class in the example, this class should contain variables based on the table as well as
     //constructors, getters, setters and the "good practice" methods.
@@ -27,9 +27,9 @@ public class Product {
     private String productDescription;
     private int quantityInStock;
     private double buyPrice;
-    private double MRSP;
+    private double msrp;
 
-    public Product(String productCode, String productName, String productLine, String productScale, String productVendor, String productDescription, int quantityInStock, double buyPrice, double MRSP) {
+    public Product(String productCode, String productName, String productLine, String productScale, String productVendor, String productDescription, int quantityInStock, double buyPrice, double msrp) {
         this.productCode = productCode;
         this.productName = productName;
         this.productLine = productLine;
@@ -38,7 +38,7 @@ public class Product {
         this.productDescription = productDescription;
         this.quantityInStock = quantityInStock;
         this.buyPrice = buyPrice;
-        this.MRSP = MRSP;
+        this.msrp = msrp;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Product {
                 ", productDescription='" + productDescription + '\'' +
                 ", quantityInStock=" + quantityInStock +
                 ", buyPrice=" + buyPrice +
-                ", MRSP=" + MRSP +
+                ", msrp=" + msrp +
                 '}';
     }
 
@@ -101,7 +101,14 @@ public class Product {
         return buyPrice;
     }
 
-    public double getMRSP() {
-        return MRSP;
+    public double getMsrp() {
+        return msrp;
+    }
+
+    @Override
+    public int compareTo(Product p) {
+        return p.productCode.compareTo(this.productCode);
     }
 }
+
+
