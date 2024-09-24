@@ -2,6 +2,7 @@ package week03classicmodels.persistence;
 
 import week03classicmodels.business.Employee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +13,15 @@ class EmployeeDaoImplTest {
     void getAllEmployees() {
         EmployeeDao empDao = new EmployeeDaoImpl();
         List<Employee> result = empDao.getAllEmployees();
-
+        Employee e1 = new Employee(1625, "Kato", "Yoshimi", "x102", "ykato@classicmodelcars.com", "5", 1621,
+                "Sales Rep");
+        Employee e2 = new Employee(1625, "Kato", "Yoshimi", "x102", "ykato@classicmodelcars.com", "5", 1621,
+                "Sales Rep");
+        Employee e3 = new Employee(1625, "Kato", "Yoshimi", "x102", "ykato@classicmodelcars.com", "5", 1621,
+                "Sales Rep");
+        for (int i = 0; i < 3; i++) {
+            assertEmployeeEquals();
+        }
     }
 
     @org.junit.jupiter.api.Test
