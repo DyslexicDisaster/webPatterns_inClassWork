@@ -19,8 +19,14 @@ class EmployeeDaoImplTest {
                 "Sales Rep");
         Employee e3 = new Employee(1625, "Kato", "Yoshimi", "x102", "ykato@classicmodelcars.com", "5", 1621,
                 "Sales Rep");
+        List<Employee> expected = new ArrayList<>();
+
+        expected.add(e1);
+        expected.add(e2);
+        expected.add(e3);
+
         for (int i = 0; i < 3; i++) {
-            assertEmployeeEquals();
+            assertEmployeeEquals(expected.get(i), result.get(i));
         }
     }
 
